@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mukuvi Motors | Premium Automotive Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0a192f",
+              accent: "#e63946",
+              secondary: "#1d3557",
+              light: "#f1faee",
+              highlight: "#a8dadc",
+            },
+            fontFamily: {
+              heading: ["Bebas Neue", "sans-serif"],
+              body: ["Montserrat", "sans-serif"],
+            },
+            animation: {
+              "text-rotate": "textRotate 12s infinite",
+            },
+            keyframes: {
+              textRotate: {
+                "0%, 20%": { transform: "translateY(0)" },
+                "25%, 45%": { transform: "translateY(-100%)" },
+                "50%, 70%": { transform: "translateY(-200%)" },
+                "75%, 95%": { transform: "translateY(-300%)" },
+                "100%": { transform: "translateY(-400%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .hero-bg {
+        background: linear-gradient(
+            135deg,
+            rgba(10, 25, 47, 0.9) 0%,
+            rgba(29, 53, 87, 0.8) 100%
+          ),
+          url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      .logo-text {
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 3px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .vehicle-card {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+      }
+
+      .vehicle-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .testimonial-card {
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-card {
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(145deg, #f8f9fa, #ffffff);
+      }
+
+      .animated-text-container {
+        height: 80px;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .animated-text {
+        animation: textRotate 12s infinite;
+      }
+
+      .animated-text span {
+        display: block;
+        line-height: 80px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        background: rgba(241, 250, 238, 0.1);
+        border: 2px solid rgba(168, 218, 220, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #a8dadc;
+        background: rgba(168, 218, 220, 0.1);
+      }
+
+      .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      .mobile-menu.open {
+        max-height: 500px;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #e63946, #d90429);
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        border: 2px solid #f1faee;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(241, 250, 238, 0.1);
+      }
+
+      .stats-card {
+        background: rgba(29, 53, 87, 0.8);
+        border-radius: 12px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .stats-card:hover {
+        transform: translateY(-5px);
+        background: rgba(29, 53, 87, 1);
+      }
+
+      .section-title {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: #e63946;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body class="font-body bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-primary text-white sticky top-0 z-50 shadow-lg">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <!-- Mukuvi Motors Logo -->
+          <div class="flex items-center">
+            <div class="bg-accent p-2 rounded-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                />
+                <path
+                  d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1v-1h4.05a2.5 2.5 0 014.9 0H20a1 1 0 001-1v-7a1 1 0 00-.293-.707l-4-4A1 1 0 0016 2H3a1 1 0 00-1 1zm14 0v3h2.586L17 4.586V4zm-3 8a1 1 0 011-1h4a1 1 0 110 2h-4a1 1 0 01-1-1zm-8-5a2 2 0 012-2h4a2 2 0 012 2v1H6V7z"
+                />
+              </svg>
+            </div>
+            <h1 class="logo-text text-3xl ml-3">MUKUVI MOTORS</h1>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="hover:text-accent transition font-medium">Home</a>
+          <a href="#vehicles" class="hover:text-accent transition font-medium"
+            >Vehicles</a
+          >
+          <a href="#services" class="hover:text-accent transition font-medium"
+            >Services</a
+          >
+          <a href="#about" class="hover:text-accent transition font-medium"
+            >About Us</a
+          >
+          <a href="#contact" class="hover:text-accent transition font-medium"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <button id="mobile-menu-button" class="md:hidden text-white">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+          <button
+            class="btn-primary px-6 py-2.5 rounded-lg font-bold hidden md:block"
+          >
+            Book a Test Drive
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu bg-primary">
+        <div class="container mx-auto px-4 py-4 flex flex-col space-y-3">
+          <a href="#" class="py-2 hover:text-accent transition">Home</a>
+          <a href="#vehicles" class="py-2 hover:text-accent transition"
+            >Vehicles</a
+          >
+          <a href="#services" class="py-2 hover:text-accent transition"
+            >Services</a
+          >
+          <a href="#about" class="py-2 hover:text-accent transition"
+            >About Us</a
+          >
+          <a href="#contact" class="py-2 hover:text-accent transition"
+            >Contact</a
+          >
+          <button class="btn-primary w-full py-2.5 rounded-lg font-bold mt-2">
+            Book a Test Drive
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="font-heading text-5xl md:text-7xl mb-6">
+          DRIVE YOUR
+          <div class="animated-text-container inline-block mx-2">
+            <div class="animated-text">
+              <span>DREAM</span>
+              <span>ADVENTURE</span>
+              <span>FUTURE</span>
+              <span>PASSION</span>
+              <span>LEGACY</span>
+            </div>
+          </div>
+        </h2>
+        <p class="text-xl max-w-3xl mx-auto mb-10 opacity-90">
+          Experience premium automotive innovation with Mukuvi Motors. Where
+          performance meets luxury, and technology embraces sustainability.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <button class="btn-primary text-lg font-bold py-3.5 px-10 rounded-lg">
+            Explore Models
+          </button>
+          <button
+            class="btn-secondary text-lg font-bold py-3.5 px-10 rounded-lg"
+          >
+            Custom Build
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-gradient-to-r from-primary to-secondary">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="stats-card">
+            <div class="text-4xl font-bold text-accent mb-2">15+</div>
+            <div class="text-light font-medium">Vehicle Models</div>
+          </div>
+          <div class="stats-card">
+            <div class="text-4xl font-bold text-accent mb-2">120K</div>
+            <div class="text-light font-medium">Happy Customers</div>
+          </div>
+          <div class="stats-card">
+            <div class="text-4xl font-bold text-accent mb-2">85</div>
+            <div class="text-light font-medium">Awards Won</div>
+          </div>
+          <div class="stats-card">
+            <div class="text-4xl font-bold text-accent mb-2">40+</div>
+            <div class="text-light font-medium">Countries</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Vehicles -->
+    <section id="vehicles" class="py-20 bg-light">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="section-title font-heading text-4xl text-primary mb-4">
+            FEATURED VEHICLES
+          </h2>
+          <p class="text-secondary max-w-3xl mx-auto text-lg">
+            Discover our premium collection of high-performance vehicles
+            designed for the modern driver.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Vehicle 1 -->
+          <div class="vehicle-card">
+            <div
+              class="h-60 bg-gradient-to-br from-gray-800 to-gray-900 relative flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div class="text-accent text-xl mb-1">NEW RELEASE</div>
+                <h3 class="font-bold text-3xl text-white">GT-X ELITE</h3>
+                <p class="text-highlight">Super Sports Edition</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-primary font-bold text-2xl">$98,900</span>
+                <div class="flex space-x-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                    >720 HP</span
+                  >
+                  <span
+                    class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"
+                    >Hybrid</span
+                  >
+                </div>
+              </div>
+              <div class="flex justify-between text-sm text-gray-600 mb-6">
+                <span
+                  ><i class="fas fa-tachometer-alt mr-1"></i> 0-60: 2.8s</span
+                >
+                <span><i class="fas fa-gas-pump mr-1"></i> 30 MPG</span>
+                <span><i class="fas fa-car mr-1"></i> AWD</span>
+              </div>
+              <button
+                class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-900 transition font-medium"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Vehicle 2 -->
+          <div class="vehicle-card">
+            <div
+              class="h-60 bg-gradient-to-br from-gray-700 to-gray-800 relative flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div class="text-accent text-xl mb-1">BEST SELLER</div>
+                <h3 class="font-bold text-3xl text-white">URBAN LUXE</h3>
+                <p class="text-highlight">Premium SUV</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-primary font-bold text-2xl">$72,500</span>
+                <div class="flex space-x-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                    >510 HP</span
+                  >
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"
+                    >Luxury</span
+                  >
+                </div>
+              </div>
+              <div class="flex justify-between text-sm text-gray-600 mb-6">
+                <span
+                  ><i class="fas fa-tachometer-alt mr-1"></i> 0-60: 4.5s</span
+                >
+                <span><i class="fas fa-gas-pump mr-1"></i> 26 MPG</span>
+                <span><i class="fas fa-car mr-1"></i> 4WD</span>
+              </div>
+              <button
+                class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-900 transition font-medium"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Vehicle 3 -->
+          <div class="vehicle-card">
+            <div
+              class="h-60 bg-gradient-to-br from-green-800 to-green-900 relative flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div class="text-accent text-xl mb-1">INNOVATION</div>
+                <h3 class="font-bold text-3xl text-white">ECO FUTURE</h3>
+                <p class="text-highlight">Electric Vehicle</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-primary font-bold text-2xl">$59,300</span>
+                <div class="flex space-x-2">
+                  <span
+                    class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"
+                    >EV</span
+                  >
+                  <span
+                    class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full"
+                    >Eco</span
+                  >
+                </div>
+              </div>
+              <div class="flex justify-between text-sm text-gray-600 mb-6">
+                <span><i class="fas fa-bolt mr-1"></i> 0-60: 4.9s</span>
+                <span><i class="fas fa-charging-station mr-1"></i> 350 mi</span>
+                <span><i class="fas fa-car mr-1"></i> RWD</span>
+              </div>
+              <button
+                class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-900 transition font-medium"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-16">
+          <button
+            class="bg-white border-2 border-primary text-primary font-bold py-3 px-8 rounded-lg hover:bg-primary hover:text-white transition"
+          >
+            View All Models <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="section-title font-heading text-4xl text-primary mb-4">
+            PREMIUM SERVICES
+          </h2>
+          <p class="text-secondary max-w-3xl mx-auto text-lg">
+            Comprehensive automotive services to keep your Mukuvi vehicle in
+            peak condition.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="service-card">
+            <div
+              class="bg-primary text-white p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-tools text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Maintenance</h3>
+            <p class="text-gray-600">
+              Regular check-ups and servicing to ensure optimal performance and
+              longevity of your vehicle.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="bg-primary text-white p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-wrench text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Repairs</h3>
+            <p class="text-gray-600">
+              Expert technicians using genuine parts for all repair needs, big
+              or small.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="bg-primary text-white p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-car-battery text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Electric Services
+            </h3>
+            <p class="text-gray-600">
+              Specialized care for electric vehicles, including battery
+              maintenance and charging solutions.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div
+              class="bg-primary text-white p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-paint-roller text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Customization</h3>
+            <p class="text-gray-600">
+              Personalize your vehicle with custom paint, interiors, and
+              performance upgrades.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="py-20 bg-gradient-to-br from-gray-50 to-gray-100"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-12 md:mb-0">
+            <div class="relative">
+              <div
+                class="bg-gray-200 border-2 border-dashed rounded-2xl w-full h-96"
+              ></div>
+              <div
+                class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-lg w-3/4"
+              >
+                <div class="flex items-center">
+                  <div
+                    class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mr-4"
+                  >
+                    <i class="fas fa-quote-left text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-primary">
+                      "Mukuvi Motors represents the future of automotive
+                      excellence."
+                    </p>
+                    <p class="text-sm text-gray-600 mt-1">
+                      - Automotive Today Magazine
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 md:pl-12">
+            <h2 class="section-title font-heading text-4xl text-primary mb-6">
+              OUR STORY
+            </h2>
+            <p class="text-gray-700 mb-6 text-lg">
+              Founded in 2010, Mukuvi Motors has revolutionized the automotive
+              industry with its commitment to innovation, sustainability, and
+              unparalleled driving experiences.
+            </p>
+            <p class="text-gray-700 mb-8 text-lg">
+              Our vehicles are crafted with precision engineering and
+              cutting-edge technology, designed to deliver exceptional
+              performance while minimizing environmental impact.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="flex items-start">
+                <div
+                  class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 mt-1"
+                >
+                  <i class="fas fa-bullseye"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-primary text-lg">Our Mission</h3>
+                  <p class="text-gray-600">
+                    Redefine automotive excellence through innovation
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 mt-1"
+                >
+                  <i class="fas fa-eye"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-primary text-lg">Our Vision</h3>
+                  <p class="text-gray-600">
+                    Sustainable mobility for future generations
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-primary mt-8 px-6 py-3 rounded-lg font-bold">
+              Learn More About Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-primary text-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="section-title font-heading text-4xl mb-4">
+            DRIVER TESTIMONIALS
+          </h2>
+          <p class="text-highlight max-w-3xl mx-auto text-lg">
+            Hear what our customers have to say about their Mukuvi Motors
+            experience
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card p-8">
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 border-2 border-dashed rounded-full w-16 h-16"
+              ></div>
+              <div class="ml-4">
+                <h4 class="font-bold text-xl">Alex Johnson</h4>
+                <p class="text-accent">GT-X Owner</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "The GT-X is simply phenomenal. The acceleration, handling, and
+              luxury features exceeded all my expectations. Mukuvi Motors has
+              created a masterpiece!"
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="testimonial-card p-8">
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 border-2 border-dashed rounded-full w-16 h-16"
+              ></div>
+              <div class="ml-4">
+                <h4 class="font-bold text-xl">Sarah Williams</h4>
+                <p class="text-accent">Urban Owner</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "Our family loves the Mukuvi Urban. It's spacious, safe, and
+              packed with technology. The service experience was exceptional
+              from start to finish."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <div class="testimonial-card p-8">
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 border-2 border-dashed rounded-full w-16 h-16"
+              ></div>
+              <div class="ml-4">
+                <h4 class="font-bold text-xl">Michael Chen</h4>
+                <p class="text-accent">Eco Owner</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "The Mukuvi Eco is the perfect blend of sustainability and
+              performance. I'm saving on fuel while enjoying a premium driving
+              experience. Highly recommended!"
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="section-title font-heading text-4xl text-primary mb-4">
+            CONTACT US
+          </h2>
+          <p class="text-secondary max-w-3xl mx-auto text-lg">
+            Have questions or ready to experience Mukuvi Motors? Reach out to
+            our team.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h3 class="text-2xl font-bold text-primary mb-6">Get In Touch</h3>
+            <form class="contact-form space-y-6">
+              <div>
+                <label class="block text-gray-700 mb-2">Full Name</label>
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div>
+                <label class="block text-gray-700 mb-2">Email Address</label>
+                <input
+                  type="email"
+                  class="w-full px-4 py-3 rounded-lg"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div>
+                <label class="block text-gray-700 mb-2">Phone Number</label>
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg"
+                  placeholder="Enter your phone"
+                />
+              </div>
+              <div>
+                <label class="block text-gray-700 mb-2">Message</label>
+                <textarea
+                  class="w-full px-4 py-3 rounded-lg h-32"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button class="btn-primary w-full py-3.5 rounded-lg font-bold">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div>
+            <div
+              class="bg-gradient-to-br from-primary to-secondary text-white rounded-2xl shadow-xl p-8 h-full"
+            >
+              <h3 class="text-2xl font-bold mb-6">Visit Our Showroom</h3>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <i
+                    class="fas fa-map-marker-alt mt-1.5 mr-4 text-xl text-accent"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold text-lg">Headquarters</h4>
+                    <p class="mt-1 text-highlight">
+                      123 Innovation Drive, Tech City, TC 10101
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <i
+                    class="fas fa-phone-alt mt-1.5 mr-4 text-xl text-accent"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold text-lg">Phone</h4>
+                    <p class="mt-1 text-highlight">+1 (800) MUKUVI</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <i
+                    class="fas fa-envelope mt-1.5 mr-4 text-xl text-accent"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold text-lg">Email</h4>
+                    <p class="mt-1 text-highlight">info@mukuvimotors.com</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <i class="fas fa-clock mt-1.5 mr-4 text-xl text-accent"></i>
+                  <div>
+                    <h4 class="font-bold text-lg">Business Hours</h4>
+                    <p class="mt-1 text-highlight">Mon-Fri: 9AM - 7PM</p>
+                    <p class="text-highlight">Sat: 10AM - 5PM</p>
+                  </div>
+                </div>
+
+                <div class="mt-8">
+                  <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+                  <div class="flex space-x-4">
+                    <a
+                      href="#"
+                      class="w-12 h-12 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition"
+                    >
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-12 h-12 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition"
+                    >
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-12 h-12 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-12 h-12 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition"
+                    >
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div>
+            <div class="flex items-center mb-6">
+              <div class="bg-accent p-2 rounded-lg mr-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                  />
+                  <path
+                    d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1v-1h4.05a2.5 2.5 0 014.9 0H20a1 1 0 001-1v-7a1 1 0 00-.293-.707l-4-4A1 1 0 0016 2H3a1 1 0 00-1 1zm14 0v3h2.586L17 4.586V4zm-3 8a1 1 0 011-1h4a1 1 0 110 2h-4a1 1 0 01-1-1zm-8-5a2 2 0 012-2h4a2 2 0 012 2v1H6V7z"
+                  />
+                </svg>
+              </div>
+              <h3 class="logo-text text-2xl">MUKUVI MOTORS</h3>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Revolutionizing the automotive experience with innovation,
+              sustainability, and unparalleled performance.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-6">QUICK LINKS</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-300 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#vehicles"
+                  class="text-gray-300 hover:text-white transition"
+                  >Vehicles</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-300 hover:text-white transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-300 hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-300 hover:text-white transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-6">MODELS</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-300 hover:text-white transition"
+                  >GT-X Sports</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-300 hover:text-white transition"
+                  >Urban SUV</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-300 hover:text-white transition"
+                  >Eco Electric</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-300 hover:text-white transition"
+                  >Performance Line</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-300 hover:text-white transition"
+                  >Concept Vehicles</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-6">NEWSLETTER</h4>
+            <p class="text-gray-300 mb-4">
+              Subscribe to receive updates and offers
+            </p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="px-4 py-2.5 rounded-l-lg w-full bg-gray-800 text-white"
+              />
+              <button
+                class="bg-accent px-4 py-2.5 rounded-r-lg hover:bg-red-700 transition"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>
+            &copy; 2023 Mukuvi Motors. All rights reserved. | Designed with
+            <i class="fas fa-heart text-accent"></i> for automotive excellence
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (mobileMenu.classList.contains("open")) {
+              mobileMenu.classList.remove("open");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
